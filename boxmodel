@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Box Model Example</title>
+    <style>
+        .box {
+            width: 200px;              
+            padding: 20px;            
+            border: 5px solid blue;   
+            margin: 30px;             
+            background-color: lightyellow;
+        }
+
+        .box2 {
+            width: 200px;
+            padding: 10px;
+            border: 3px dashed green;
+            margin: 20px;
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Box Model Example</h2>
+
+    <div class="box">
+        This is Box 1<br>
+        Content + Padding + Border + Margin
+    </div>
+
+    <div class="box2">
+        This is Box 2 with different styling.
+    </div>
+
+</body>
+</html>
