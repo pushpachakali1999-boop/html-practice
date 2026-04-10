@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+  <style>
+    body {
+      font-family: Pushpa;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="submit"] {
+      background: #4facfe;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:
+    hover {
+      background: #007bff;
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+    }
+  </style>
+
+  <script>
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let error = "";
+
+      if (name === "") {
+        error = "Name is required";
+      } else if (email === "") {
+        error = "Email is required";
+      } else if (!email.includes("@")) {
+        error = "Enter valid email";
+      }
+
+      if (error !== "") {
+        document.getElementById("errorMsg").innerHTML = error;
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Register</h2>
+  
+  <form onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="email" placeholder="Enter Email">
+    
+    <div id="errorMsg" class="error"></div>
+    
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
