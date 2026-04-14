@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map, Set, Iteration Example</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            text-align: center;
+            color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: orange;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Student Data (Map + Set + Iteration)</h2>
+
+<button onclick="showSubjects()">Show Subjects</button>
+<button onclick="showStudents()">Show Students</button>
+<button onclick="showResults()">Show Results</button>
+
+<div id="output"></div>
+
+<script>
+    
+    let subjects = new Set(["Math", "Science", "English", "Math"]);
+
+    
+    let students = new Map([
+        ["Pushpa", 85],
+        ["Ravi", 90],
+        ["Anu", 78]
+    ]);
+
+    
+    function showSubjects() {
+        let result = "<h3>Subjects</h3>";
+        subjects.forEach(sub => {
+            result += sub + "<br>";
+        });
+        document.getElementById("output").innerHTML = result;
+    }
+
+    
+    function showStudents() {
+        let result = "<h3>Student Marks</h3>";
+        for (let [name, marks] of students) {
+            result += name + " : " + marks + "<br>";
+        }
+        document.getElementById("output").innerHTML = result;
+    }
+
+    
+    function showResults() {
+        let result = "<h3>Results</h3>";
+        students.forEach((marks, name) => {
+            let status = marks >= 80 ? "Pass ✅" : "Fail ❌";
+            result += name + " → " + status + "<br>";
+        });
+        document.getElementById("output").innerHTML = result;
+    }
+</script>
+
+</body>
+</html>

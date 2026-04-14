@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date Arrays</title>
+</head>
+<body>
+
+<h2>Dates in Array</h2>
+<button onclick="showDates()">Show Dates</button>
+
+<p id="output"></p>
+
+ <script>
+function showDates() {
+    let dates = [
+        new Date("2025-01-01"),
+        new Date("2025-05-10"),
+        new Date("2025-12-25")
+    ];
+
+    let result = "";
+
+    dates.forEach(function(d) {
+        result += d.toDateString() + "<br>";
+    });
+
+    document.getElementById("output").innerHTML = result;
+}
+</script>
+
+</body>
+</html> 
